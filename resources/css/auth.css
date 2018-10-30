@@ -1,0 +1,76 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.invisible {
+   display: none !important;
+}
+
+.main {
+    height: 100%;
+    min-width: 320px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth_container {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.6);
+    padding: 30px 30px;
+    text-align: center;
+    font-family: Roboto, sans-serif;
+}
+
+.logo_container {
+    padding: 40px 0 30px 5px;
+}
+
+.form-control {
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #D0EBEB;
+    padding: 12px 0;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    color: #333;
+}
+
+.answer {
+    text-align: center;
+    color: #F04641;
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.button_block {
+    padding: 40px 0 ;
+}
+
+.auth_button {
+    padding: 12px 30px;
+    background: #F04641;
+    color: white;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+@media (max-width: 325px) {
+    .auth_container {
+        width: 250px;
+        height: 250px;
+        padding: 25px 25px;
+    }
+}
