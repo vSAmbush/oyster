@@ -19,7 +19,8 @@ class AssetLoader
         'css/auth.css',
         'css/spinner.css',
         'css/fonts.css',
-        'css/site.css'
+        'css/site.css',
+        'font-awesome/css/font-awesome.css'
     ];
 
     public $js = [

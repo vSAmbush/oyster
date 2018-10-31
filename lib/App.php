@@ -59,7 +59,7 @@ class App
         self::$router = new Router($uri);
 
         //first line need to avoid links errors while testing in localhost
-        self::$resource_path = (preg_match('/\bcrm_v2\b/', $_SERVER['REQUEST_URI'])) ? '/crm_v2' : '';
+        self::$resource_path = (preg_match('/\bcrm\b/', $_SERVER['REQUEST_URI'])) ? '/crm' : '';
 
         self::$link_path = self::$resource_path;
 

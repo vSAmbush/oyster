@@ -1,9 +1,82 @@
 .header {
     border-bottom: 1px solid #E8E8E8;
-    padding: 10px 0 10px 20px;
+    font-family: Roboto, sans-serif;
+    height: 69px;
 }
 
 .header-logo {
-    padding-top: 3px;
     width: 115px;
+    padding: 13px 20px 7px 20px;
+    float: left;
+    margin-right: 25px;
+}
+
+.navigation {
+    float: left;
+    padding: 0;
+    margin: 0 0 0 25px;
+    list-style: none;
+    position: relative;
+}
+
+.navigation a {
+    text-decoration: none;
+}
+
+.navigation li {
+    float: left;
+}
+
+.nav-item {
+    display: block;
+    padding: 24px 10px;
+    color: #555;
+    border-bottom: 2px solid #fff;
+    /*All to transition on all pseudo classes*/
+    transition: 0.3s all;
+    font-weight: 300;
+}
+
+.complex {
+    font-weight: 400;
+}
+
+.complex i {
+    padding-right: 1px;
+    transform: rotate(-90deg);
+}
+
+.complex:hover {
+    border-bottom: 2px solid #eee !important;
+}
+
+.nav-item:hover {
+    background: #eee;
+    border-bottom: 2px solid #F04641;
+}
+
+.sub-navigation {
+    position: absolute;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #E8E8E8;
+}
+
+.sub-navigation li {
+    float: none;
+}
+
+.sub-nav-item {
+    display: block;
+    padding: 7px;
+    color: #555;
+    font-weight: 300;
+    transition: 0.3s all;
+    border-right: 2px solid #fff;
+    background: #fff;
+}
+
+.sub-nav-item:hover {
+    background: #eee;
+    border-right: 2px solid #F04641;
 }

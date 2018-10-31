@@ -37,7 +37,7 @@ class Router
      */
     public function __construct($uri)
     {
-        $this->uri = urldecode(trim(str_replace('crm_v2/', '', $uri), '/'));
+        $this->uri = urldecode(trim(str_replace('crm/', '', $uri), '/'));
 
         //Set defaults
         $routes = Config::get('routes');

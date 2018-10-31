@@ -53,6 +53,12 @@ class View
      * @throws \Exception
      */
     private function getDefaultViewPath($view_name = null) {
+        $parse = explode('.', $view_name);
+
+        //Checking is set extension
+        if(!isset($parse[1])) {
+            $parse[1] = 'php';
+        }
         $router = App::getRouter();
 
         if(!$router) {
@@ -61,7 +67,7 @@ class View
 
         $controller_dir = str_replace('controller', '', strtolower($router->getController()));
 
-        return VIEWS_PATH.DS.$controller_dir.DS.$view_name.'.php';
+        return VIEWS_PATH.DS.$controller_dir.DS.$parse[0].'.'.$parse[1];
     }
 
     /**

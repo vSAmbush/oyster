@@ -33,8 +33,77 @@ use lib\Config;
 
     <div class="header">
         <div class="header-logo">
-            <img src="<?= App::$image_path?>logo.png">
+            <a href="<?= App::$link_path?>/site/index"><img src="<?= App::$image_path?>logo.png"></a>
         </div>
+
+        <ul class="navigation">
+            <li><a class="nav-item" href="#">Рабочий стол</a></li>
+            <li>
+                <a class="nav-item complex" href="#">Компания <i class="fa fa-angle-down"></i></a>
+                <ul class="sub-navigation" style="display: none">
+                    <li><a class="sub-nav-item" href="#">Сотрудники</a></li>
+                    <li><a class="sub-nav-item" href="#">Документы</a></li>
+                    <li><a class="sub-nav-item" href="#">Услуги</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="nav-item complex" href="#">Клиенты <i class="fa fa-angle-down"></i></a>
+                <ul class="sub-navigation" style="display: none">
+                    <li><a class="sub-nav-item" href="#">События</a></li>
+                    <li><a class="sub-nav-item" href="#">Мои клиенты</a></li>
+                    <li><a class="sub-nav-item" href="#">Все клиенты</a></li>
+                    <li><a class="sub-nav-item" href="#">Счета</a></li>
+                    <li><a class="sub-nav-item" href="#">Бизнес-центры</a></li>
+                    <li><a class="sub-nav-item" href="#">Агенты</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="nav-item complex" href="#">Задачи <i class="fa fa-angle-down"></i></a>
+                <ul class="sub-navigation" style="display: none">
+                    <li><a class="sub-nav-item" href="<?= App::$link_path?>/task/new">Новые</a></li>
+                    <li><a class="sub-nav-item" href="#">В работе</a></li>
+                    <li><a class="sub-nav-item" href="#">Завершенные</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="nav-item complex" href="#">Почта <i class="fa fa-angle-down"></i></a>
+                <ul id="email_ul" class="sub-navigation" style="display: none">
+                    <li><a class="sub-nav-item" href="#">e.logvin@oyster</a></li>
+                    <li><a class="sub-nav-item" href="#">suppory@oyster</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="nav-item complex" href="#">Инфраструктура <i class="fa fa-angle-down"></i></a>
+                <ul class="sub-navigation" style="display: none">
+                    <li><a class="sub-nav-item" href="<?= App::$link_path?>/infrastructure/maps">Карта</a></li>
+                    <li><a class="sub-nav-item" href="#">Сети</a></li>
+                    <li><a class="sub-nav-item" href="#">Узлы</a></li>
+                    <li><a class="sub-nav-item" href="#">Телефонные номера</a></li>
+                    <li><a class="sub-nav-item" href="#">Арендованные ресурсы</a></li>
+                </ul>
+            </li>
+            <li><a class="nav-item" href="#">Бухгалтерия</a></li>
+            <li><a class="nav-item" href="#">Склад</a></li>
+            <li><a class="nav-item" href="#">Календарь</a></li>
+            <li>
+                <a class="nav-item complex" href="#">Поддержка <i class="fa fa-angle-down"></i></a>
+                <ul class="sub-navigation" style="display: none">
+                    <li><a class="sub-nav-item" href="#">Автоответчик</a></li>
+                    <li><a class="sub-nav-item" href="#">Тикеты</a></li>
+                    <li><a class="sub-nav-item" href="#">Оповещания</a></li>
+                </ul>
+            </li>
+            <li><a class="nav-item" href="#">Статистика</a></li>
+            <li>
+                <a class="nav-item complex" href="#">Управление <i class="fa fa-angle-down"></i></a>
+                <ul class="sub-navigation" style="display: none">
+                    <li><a class="sub-nav-item" href="#">Отделы</a></li>
+                    <li><a class="sub-nav-item" href="#">Сотрудники</a></li>
+                    <li><a class="sub-nav-item" href="#">События</a></li>
+                    <li><a class="sub-nav-item" href="#">Отладка</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
     <!-- Displaying the view file -->
     <?= $content ?>

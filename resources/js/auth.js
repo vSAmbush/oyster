@@ -79,38 +79,36 @@ $('#enter_btn').on('click', function (e) {
 
     var phone = $('#login').val();
     var passwd = $('#password').val();
-    var flag = true;
 
-    if(flag)
-        $.ajax({
-            type: 'POST',
-            //clear /crm_v2 on remote server
-            url: '/crm_v2/auth/authentication/',
-            data: {
-                login: phone,
-                password: passwd
-            },
-            success: function(answer) {
-                console.log(answer);
-                if (answer === 'code') {
-                    setTimeout(showCode, 1000);
-                }
-                if (answer === 'wrong') {
-                    //setTimeout with parameters
-                    setTimeout(showError, 1000, 'code');
-                }
-                if (answer === 'fail') {
-                    setTimeout(showError, 1000, 'phone');
-                }
-                if (answer === 'success') {
-                    flag = false;
-                    setTimeout(window.location.href = '/crm_v2/auth/saveuser', 1000);
-                }
-                return false;
-            },
-            error: function() {
-                alert('Error!');
-                window.location.reload();
+    $.ajax({
+        type: 'POST',
+        //clear /crm_v2 on remote server
+        url: '/crm/auth/authentication/',
+        data: {
+            login: phone,
+            password: passwd
+        },
+        success: function(answer) {
+            console.log(answer);
+            if (answer === 'code') {
+                setTimeout(showCode, 1000);
             }
-        });
+            if (answer === 'wrong') {
+                //setTimeout with parameters
+                setTimeout(showError, 1000, 'code');
+            }
+            if (answer === 'fail') {
+                setTimeout(showError, 1000, 'phone');
+            }
+            if (answer === 'success') {
+                flag = false;
+                setTimeout(window.location.href = '/crm/auth/saveuser', 1000);
+            }
+            return false;
+        },
+        error: function() {
+            alert('Error!');
+            window.location.reload();
+        }
+    });
 });
