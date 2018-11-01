@@ -31,15 +31,17 @@ use lib\Config;
 <!-- Body begin -->
 <body>
 
+    <div class="pseudo-header" style="height: 0"></div>
     <div class="header">
         <div class="header-logo">
             <a href="<?= App::$link_path?>/site/index"><img src="<?= App::$image_path?>logo.png"></a>
         </div>
 
+        <!-- Nav List -->
         <ul class="navigation">
             <li><a class="nav-item" href="#">Рабочий стол</a></li>
             <li>
-                <a class="nav-item complex" href="#">Компания <i class="fa fa-angle-down"></i></a>
+                <a class="nav-item complex">Компания <i class="fa fa-angle-down"></i></a>
                 <ul class="sub-navigation" style="display: none">
                     <li><a class="sub-nav-item" href="#">Сотрудники</a></li>
                     <li><a class="sub-nav-item" href="#">Документы</a></li>
@@ -47,7 +49,7 @@ use lib\Config;
                 </ul>
             </li>
             <li>
-                <a class="nav-item complex" href="#">Клиенты <i class="fa fa-angle-down"></i></a>
+                <a class="nav-item complex">Клиенты <i class="fa fa-angle-down"></i></a>
                 <ul class="sub-navigation" style="display: none">
                     <li><a class="sub-nav-item" href="#">События</a></li>
                     <li><a class="sub-nav-item" href="#">Мои клиенты</a></li>
@@ -58,7 +60,7 @@ use lib\Config;
                 </ul>
             </li>
             <li>
-                <a class="nav-item complex" href="#">Задачи <i class="fa fa-angle-down"></i></a>
+                <a class="nav-item complex">Задачи <i class="fa fa-angle-down"></i></a>
                 <ul class="sub-navigation" style="display: none">
                     <li><a class="sub-nav-item" href="<?= App::$link_path?>/task/new">Новые</a></li>
                     <li><a class="sub-nav-item" href="#">В работе</a></li>
@@ -66,14 +68,14 @@ use lib\Config;
                 </ul>
             </li>
             <li>
-                <a class="nav-item complex" href="#">Почта <i class="fa fa-angle-down"></i></a>
+                <a class="nav-item complex">Почта <i class="fa fa-angle-down"></i></a>
                 <ul id="email_ul" class="sub-navigation" style="display: none">
                     <li><a class="sub-nav-item" href="#">e.logvin@oyster</a></li>
                     <li><a class="sub-nav-item" href="#">suppory@oyster</a></li>
                 </ul>
             </li>
             <li>
-                <a class="nav-item complex" href="#">Инфраструктура <i class="fa fa-angle-down"></i></a>
+                <a class="nav-item complex">Инфраструктура <i class="fa fa-angle-down"></i></a>
                 <ul class="sub-navigation" style="display: none">
                     <li><a class="sub-nav-item" href="<?= App::$link_path?>/infrastructure/maps">Карта</a></li>
                     <li><a class="sub-nav-item" href="#">Сети</a></li>
@@ -86,16 +88,16 @@ use lib\Config;
             <li><a class="nav-item" href="#">Склад</a></li>
             <li><a class="nav-item" href="#">Календарь</a></li>
             <li>
-                <a class="nav-item complex" href="#">Поддержка <i class="fa fa-angle-down"></i></a>
+                <a class="nav-item complex">Поддержка <i class="fa fa-angle-down"></i></a>
                 <ul class="sub-navigation" style="display: none">
                     <li><a class="sub-nav-item" href="#">Автоответчик</a></li>
                     <li><a class="sub-nav-item" href="#">Тикеты</a></li>
-                    <li><a class="sub-nav-item" href="#">Оповещания</a></li>
+                    <li><a class="sub-nav-item" href="#">Оповещения</a></li>
                 </ul>
             </li>
             <li><a class="nav-item" href="#">Статистика</a></li>
             <li>
-                <a class="nav-item complex" href="#">Управление <i class="fa fa-angle-down"></i></a>
+                <a class="nav-item complex">Управление <i class="fa fa-angle-down"></i></a>
                 <ul class="sub-navigation" style="display: none">
                     <li><a class="sub-nav-item" href="#">Отделы</a></li>
                     <li><a class="sub-nav-item" href="#">Сотрудники</a></li>
@@ -104,6 +106,7 @@ use lib\Config;
                 </ul>
             </li>
         </ul>
+        <!-- End Nav List -->
     </div>
     <!-- Displaying the view file -->
     <?= $content ?>

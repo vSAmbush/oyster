@@ -82,7 +82,7 @@ $('#enter_btn').on('click', function (e) {
 
     $.ajax({
         type: 'POST',
-        //clear /crm_v2 on remote server
+        //clear /crm on remote server
         url: '/crm/auth/authentication/',
         data: {
             login: phone,
@@ -102,6 +102,7 @@ $('#enter_btn').on('click', function (e) {
             }
             if (answer === 'success') {
                 flag = false;
+                //AND HERE CLEAR /crm on remote server
                 setTimeout(window.location.href = '/crm/auth/saveuser', 1000);
             }
             return false;

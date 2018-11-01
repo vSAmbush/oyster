@@ -82,3 +82,36 @@ $('.complex').on('click', function (e) {
     else
         animate($(this));
 });
+
+/**
+ * Need when user reload page and scroll not on the start value
+ */
+$(document).ready(function () {
+    $('.pseudo-header').height($('.header').outerHeight());
+
+    $(window).scroll();
+});
+
+/**
+ * Needs to avoid leaps
+ */
+var prevScroll = 0;
+$(window).scroll(function (e) {
+
+    var header = $('.header'),
+        scroll = $(this).scrollTop();
+
+    if(scroll > 0) {
+
+        $('.pseudo-header').show();
+        header.addClass('fixed');
+        if(scroll - prevScroll > 30) {
+            $(this).scrollTop(prevScroll);
+        }
+        prevScroll = scroll;
+    } else {
+
+        header.removeClass('fixed');
+        $('.pseudo-header').hide();
+    }
+});
