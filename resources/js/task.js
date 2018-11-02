@@ -1,5 +1,12 @@
-$('.card_content').perfectScrollbar();
-$('.card_content').perfectScrollbar("update");
+$('.card_content').perfectScrollbar({
+    useBothWheelAxes: false,
+    suppressScrollX: true
+});
+
+$('.card_super_container').perfectScrollbar({
+    useBothWheelAxes: false,
+    suppressScrollY: true
+})
 
 $(document).ready(function () {
 
@@ -12,6 +19,5 @@ $(document).ready(function () {
         if(cards[i].scrollHeight < maxHeight) {
             cards[i].parentNode.style.height = 'auto';
         }
-        console.log(cards[i].scrollHeight < maxHeight);
     }
 });
