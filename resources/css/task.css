@@ -9,11 +9,10 @@
 .card_container {
     float: left;
     margin-right: 10px;
-    color: #6b808c;
+    color: #6b808c !important;
     /*color: #17394d;*/
     background: #dfe3e6;
-    max-height: calc(100% - 30px);
-    height: inherit;
+    height: calc(100% - 30px);
     width: 272px;
     border-radius: 5px;
     font-family: Roboto, sans-serif;
@@ -67,7 +66,7 @@
 }
 
 .card_menu:hover {
-    background: #d2d5da;
+    background: rgba(9, 45, 66, 0.13);
 }
 
 .card_content {
@@ -80,14 +79,14 @@
 }
 
 .card {
-    margin-bottom: 5px;
+    margin-top: 5px;
     border-radius: 5px;
     background: #fff;
     height: 500px;
 }
 
-.card:last-child {
-    margin-bottom: 0;
+.card:first-child {
+    margin-top: 0;
 }
 
 .add_div {
@@ -98,6 +97,6 @@
 }
 
 .add_div:hover {
-    background: #d2d5da;
+    background: rgba(9, 45, 66, 0.13);
     text-decoration: underline;
 }

@@ -37,7 +37,7 @@ class Router
      */
     public function __construct($uri)
     {
-        $this->uri = urldecode(trim(str_replace('crm/', '', $uri), '/'));
+        $this->uri = urldecode(trim(str_replace(App::$local_directory_name, '', $uri), '/'));
 
         //Set defaults
         $routes = Config::get('routes');
@@ -135,6 +135,14 @@ class Router
     public function getMethodPrefix()
     {
         return $this->method_prefix;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUri()
+    {
+        return $this->uri;
     }
 
 

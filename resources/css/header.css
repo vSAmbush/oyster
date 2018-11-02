@@ -24,7 +24,8 @@
 }
 
 .navigation a {
-    text-decoration: none;
+    text-decoration: none !important;
+    color: #555 !important;
 }
 
 .navigation li {
@@ -97,4 +98,18 @@
     top: 0;
     left: 0;
     width: 100%;
+}
+
+@media (max-width: 1515px) {
+    .header-logo {
+        margin: 0;
+    }
+
+    .header {
+        height: 207px;
+    }
+
+    .navigation {
+        margin: 0 0 0 10px;
+    }
 }

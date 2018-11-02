@@ -30,6 +30,9 @@ function checkSubNavigations(object) {
     $('.sub-navigation').hide();
 
     var flag = false;
+    //To avoids exceptions
+    if(!object)
+        object = $('body');
 
     $('.complex').find('i').each(function () {
         if($(this).hasClass('rotated') && object[0] !== $(this)[0]) {
@@ -81,6 +84,16 @@ $('.complex').on('click', function (e) {
         setTimeout(animate, 200, $(this));
     else
         animate($(this));
+});
+
+/**
+ * Hiding sub menu on click anywhere except header's nav-items
+ */
+$('body').on('click', function (e) {
+
+    if(!$(e.target).hasClass('nav-item') && !$(e.target).hasClass('sub-nav-item')) {
+        checkSubNavigations();
+    }
 });
 
 /**

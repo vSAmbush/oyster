@@ -43,6 +43,54 @@ use lib\Config;
 
     <?= App::includingScriptTags() ?>
     <!-- End scripts including (Add js files in assets/AssetLoader) -->
+    <script type="text/javascript">
+        $('#enter_btn').on('click', function (e) {
+
+            e.preventDefault();
+
+            $(this).hide();
+            $('#login').hide();
+            $('#password').hide();
+            $('#answer').hide();
+            $('#loader').show();
+
+            var phone = $('#login').val();
+            var passwd = $('#password').val();
+
+            $.ajax({
+                type: 'POST',
+                //clear /crm on remote server
+                url: '<?= App::$link_path ?>/auth/authentication/',
+                data: {
+                    login: phone,
+                    password: passwd
+                },
+                success: function(answer) {
+                    console.log(answer);
+                    if (answer === 'code') {
+                        setTimeout(showCode, 1000);
+                    }
+                    if (answer === 'wrong') {
+                        //setTimeout with parameters
+                        setTimeout(showError, 1000, 'code');
+                    }
+                    if (answer === 'fail') {
+                        setTimeout(showError, 1000, 'phone');
+                    }
+                    if (answer === 'success') {
+                        flag = false;
+                        //AND HERE CLEAR /crm on remote server
+                        setTimeout(window.location.href = '<?= App::$link_path ?>/auth/saveuser', 1000);
+                    }
+                    return false;
+                },
+                error: function() {
+                    alert('Error!');
+                    window.location.reload();
+                }
+            });
+        });
+    </script>
 </body>
 <!-- Body end -->
 </html>

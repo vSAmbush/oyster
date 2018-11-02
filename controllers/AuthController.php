@@ -203,7 +203,10 @@ class AuthController extends Controller
                 'expired' => $_SESSION['expired']
             ]);
         }
-        header('Location:'.App::$link_path.'/site/index');
+        if(isset($_SESSION['source_link']))
+            header('Location: '.$_SESSION['source_link']);
+        else
+            header('Location:'.App::$link_path.'/site/index');
 
         /**
          * WORKS

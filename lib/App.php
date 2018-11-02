@@ -39,6 +39,11 @@ class App
     public static $link_path;
 
     /**
+     * @var string - Enter here your local directory name
+     */
+    public static $local_directory_name = 'crm';
+
+    /**
      * @var SQLHandler
      */
     public static $sql_handler;
@@ -59,7 +64,7 @@ class App
         self::$router = new Router($uri);
 
         //first line need to avoid links errors while testing in localhost
-        self::$resource_path = (preg_match('/\bcrm\b/', $_SERVER['REQUEST_URI'])) ? '/crm' : '';
+        self::$resource_path = (preg_match('/\b'.self::$local_directory_name.'\b/', $uri)) ? '/'.self::$local_directory_name : '';
 
         self::$link_path = self::$resource_path;
 
@@ -73,6 +78,12 @@ class App
         $method_name = self::$router->getMethodPrefix().self::$router->getAction();
 
         $controller = new $controller_name();
+
+        if(self::$router->getController() !== 'AuthController' && !isset($_COOKIE['key'])) {
+
+            $_SESSION['source_link'] = $uri;
+            header('Location: '.self::$link_path.'/auth');
+        }
 
         //Calling controller's method if it exits
         if(method_exists($controller, $method_name)) {
